@@ -14,6 +14,13 @@
 		$correo =  $link->real_escape_string($_POST['c']);
 		$nam_tag =  $link->real_escape_string($_POST['nt']);
 
+		if(is_null($fecha_na)){
+			echo "nula";
+		}
+		if(is_null($genero)){
+			echo "vacia";
+		}
+
 		$sql = "UPDATE gamers Set nombre = '".$nombre."', apellidos = '".$apellidos."', fecha_nacimiento = '".$fecha_na."', genero =  '".$genero."', telefono =  '".$telefono."', correo =  '".$correo."', namer_tag =  '".$nam_tag."' WHERE id = ".$q.";";
 		echo $sql;
 	}
