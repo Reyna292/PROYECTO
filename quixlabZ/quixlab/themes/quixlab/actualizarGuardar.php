@@ -14,10 +14,10 @@
 		$correo =  $link->real_escape_string($_POST['c']);
 		$nam_tag =  $link->real_escape_string($_POST['nt']);
 
-		if(is_null($fecha_na)){
+		if(empty($fecha_na)){
 			echo "nula";
 		}
-		if(is_null($genero)){
+		if(empty($genero)){
 			echo "vacia";
 		}
 
