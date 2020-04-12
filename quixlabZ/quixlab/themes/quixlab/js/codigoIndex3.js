@@ -105,8 +105,14 @@ function guard(idd){
 	var nt = document.getElementById("nam").value;
 
 	if(id != " "){
-		if(f == null) {f = "null"}
-		if(g == null) {g = "null"}
+		if(f == null) {
+			f = "null";
+			console.log("entrof ");
+		}
+		if(g == null) {
+			g = "null";
+			console.log("entro g");
+		}
 			console.log("f "+ f +" g "+g);
 		guardar(id,n,a,f,g,t,c,nt);
 		buscar();
