@@ -41,7 +41,6 @@ function eliminar(consulta){
 
 function guardar(id,n,a,f,g,t,c,nt){
 	console.log(id+n+a+f+g+t+c+nt);
-	//var consulta = {id: id, n: n,a: a,f: f,g: g,t: t,c: c,nt: nt} "id": id, "n": n,"a": a,"f": f,"g": g,"t": t,"c": c,"nt": nt
 	$.ajax({
 		url:'./actualizarGuardar.php',
 		type: 'POST',
@@ -106,6 +105,9 @@ function guard(idd){
 	var nt = document.getElementById("nam").value;
 
 	if(id != " "){
+		if(f == " ") {f = 'null'}
+		if(g == " ") {g = 'null'}
+			console.log("f "+f +" g "+g);
 		guardar(id,n,a,f,g,t,c,nt);
 		buscar();
 	}else{
