@@ -18,14 +18,17 @@
 			echo "f nula ";
 			$fecha_na = 'null';
 			echo $fecha_na;
-		}
-		if(empty($genero)){
+			$sql = "UPDATE gamers Set nombre = '".$nombre."', apellidos = '".$apellidos."', fecha_nacimiento = ".$fecha_na.", genero =  '".$genero."', telefono =  '".$telefono."', correo =  '".$correo."', namer_tag =  '".$nam_tag."' WHERE id = ".$q.";";
+		}else if(empty($genero)){
 			echo "g vacia ";
 			$genero = 'null';
 			echo $genero;
+			$sql = "UPDATE gamers Set nombre = '".$nombre."', apellidos = '".$apellidos."', fecha_nacimiento = '".$fecha_na."', genero =  ".$genero.", telefono =  '".$telefono."', correo =  '".$correo."', namer_tag =  '".$nam_tag."' WHERE id = ".$q.";";
+		}else{
+			$sql = "UPDATE gamers Set nombre = '".$nombre."', apellidos = '".$apellidos."', fecha_nacimiento = '".$fecha_na."', genero =  '".$genero."', telefono =  '".$telefono."', correo =  '".$correo."', namer_tag =  '".$nam_tag."' WHERE id = ".$q.";";
 		}
 
-		$sql = "UPDATE gamers Set nombre = '".$nombre."', apellidos = '".$apellidos."', fecha_nacimiento = '".$fecha_na."', genero =  '".$genero."', telefono =  '".$telefono."', correo =  '".$correo."', namer_tag =  '".$nam_tag."' WHERE id = ".$q.";";
+		
 		echo $sql;
 	}
 
