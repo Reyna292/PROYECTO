@@ -9,8 +9,8 @@ $(document).on('keyup','#precio1', function(){
 	precio2 = document.getElementById("precio2").value;
 
 	var total = 0;
-	total = parseInt(precio1)*horas;
-	total += parseInt(precio2);
+	total = parseInt(precio1)*horas + parseInt(precio2);
+	//total += parseInt(precio2);
 	document.getElementById("total").value = total;
 
 })
@@ -26,8 +26,8 @@ $(document).on('keyup','#precio2', function(){
 	precio2 = document.getElementById("precio2").value;
 
 	var total = 0;
-	total = parseInt(precio1)*horas;
-	total += parseInt(precio2);
+	total = parseInt(precio1)*horas + parseInt(precio2);
+	//total += parseInt(precio2);
 	document.getElementById("total").value = total;
 
 })
