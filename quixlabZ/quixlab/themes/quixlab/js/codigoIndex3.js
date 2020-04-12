@@ -105,9 +105,9 @@ function guard(idd){
 	var nt = document.getElementById("nam").value;
 
 	if(id != " "){
-		if(f == " ") {f = 'null'}
-		if(g == " ") {g = 'null'}
-			console.log("f "+f +" g "+g);
+		if(f == null) {f = "null"}
+		if(g == null) {g = "null"}
+			console.log("f "+ f +" g "+g);
 		guardar(id,n,a,f,g,t,c,nt);
 		buscar();
 	}else{
