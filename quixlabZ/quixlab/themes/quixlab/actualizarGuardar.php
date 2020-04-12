@@ -1,0 +1,29 @@
+<?php  
+	
+	 $link = new mysqli("localhost","root","","revolution");
+	 $salida = "";
+	// $sql = "SELECT id,nombre,apellidos,fecha_nacimiento,genero,telefono,correo,namer_tag FROM gamers";
+
+	if(isset($_POST['id'])){
+		$q = $link->real_escape_string($_POST['id']);
+		$nombre =  $link->real_escape_string($_POST['n']);
+		$apellidos =  $link->real_escape_string($_POST['a']);
+		$fecha_na =  $link->real_escape_string($_POST['f']);
+		$genero =  $link->real_escape_string($_POST['g']);
+		$telefono =  $link->real_escape_string($_POST['t']);
+		$correo =  $link->real_escape_string($_POST['c']);
+		$nam_tag =  $link->real_escape_string($_POST['nt']);
+
+		$sql = "UPDATE gamers Set nombre = '".$nombre."', apellidos = '".$apellidos."', fecha_nacimiento =  ".$fecha_na.", genero =  '".$genero."', telefono =  ".$telefono.", correo =  '".$correo."', namer_tag =  '".$nam_tag."' WHERE id = ".$q.";";
+		echo $sql;
+	}
+
+	$resultado = $link -> query($sql);
+	if($resultado){
+		return "Guardado";
+	}
+	echo (mysqli_error ($link));
+
+	echo $salida;
+	$link -> close();
+?>
