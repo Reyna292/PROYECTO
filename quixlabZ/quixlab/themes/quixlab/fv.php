@@ -6,6 +6,7 @@
       }
          $query2 = "SELECT monedas from gamers where id=".$var.";";   
          $resultado = mysqli_query($link, $query2);
+         echo "QUERY   " . $query2;
  
 
 	if($resultado -> num_rows > 0){
