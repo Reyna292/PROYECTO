@@ -23,9 +23,9 @@
 			echo "g vacia ";
 			$genero = 'null';
 			echo $genero;
-			$sql = "UPDATE gamers Set nombre = '".$nombre."', apellidos = '".$apellidos."', fecha_nacimiento = '".$fecha_na."', genero =  ".$genero.", telefono =  '".$telefono."', correo =  '".$correo."',  WHERE id = ".$q.";";
+			$sql = "UPDATE gamers Set nombre = '".$nombre."', apellidos = '".$apellidos."', fecha_nacimiento = '".$fecha_na."', genero =  ".$genero.", telefono =  '".$telefono."', correo =  '".$correo."'  WHERE id = ".$q.";";
 		}else{
-			$sql = "UPDATE gamers Set nombre = '".$nombre."', apellidos = '".$apellidos."', fecha_nacimiento = '".$fecha_na."', genero =  '".$genero."', telefono =  '".$telefono."', correo =  '".$correo."',  WHERE id = ".$q.";";
+			$sql = "UPDATE gamers Set nombre = '".$nombre."', apellidos = '".$apellidos."', fecha_nacimiento = '".$fecha_na."', genero =  '".$genero."', telefono =  '".$telefono."', correo =  '".$correo."'  WHERE id = ".$q.";";
 		}
 
 		
