@@ -25,6 +25,7 @@
                             <th>Maximo de Jugadores</th>
                             <th>Forma</th>
                             <th>Premios</th>
+                            <th>Descripción</th>
                             <th>Estatus</th>
                             <th>Ganador</th>
 
