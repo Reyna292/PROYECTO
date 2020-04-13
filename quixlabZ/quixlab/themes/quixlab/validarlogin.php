@@ -5,7 +5,7 @@
     
     if($reqlen > 0){
         require("connect_db.php");
-        $consulta = "SELECT * FROM usuarios WHERE usuario='".$usr."' and contraseña='".$pass."'";
+        $consulta = "SELECT * FROM usuarios WHERE usuario='$usr' and contraseña='$pass'";
         echo $consulta;
         $resultado=mysqli_query($link, $consulta);
         $filas=mysqli_num_rows($resultado);

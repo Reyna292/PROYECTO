@@ -37,7 +37,7 @@
                                   
                                     <td><button type='button' value='".$ver['id']."' id='eliminar' onclick='preg(".$ver['id'].");' class='btn btn-primary'>Eliminar
                                     </td>
-n                                   <td><input type='checkbox' name='keyToDelete' value='".$ver['id']."'</td>
+                                   <td><input type='checkbox' name='keyToDelete' value='".$ver['id']."'</td>
                                 </tr>";
                     }
                     $salida.="</tbody></table>";
