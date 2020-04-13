@@ -2,10 +2,19 @@
      require("connect_db.php");
      
 
-      $query1 = "SELECT nombre,id from gamers";
+      $query1 = "SELECT id, nombre FROM juegos";
       $result1 = mysqli_query($link, $query1);
-
+      date_default_timezone_set("America/Monterrey");
    
+      $query3 = "SELECT c.id, p.nombre, p.costo_por_hora, p.costo_en_monedas from consolas c inner join plataformas p on c.id_plataforma = p.id ";
+      $result3 = mysqli_query($link, $query3);
+
+        $query4 = "SELECT id,nombre from accesorios";
+      $result4 = mysqli_query($link, $query4);
+
+
+        $query5 = "SELECT id from consolas";
+      $result5 = mysqli_query($link, $query5);
 
 ?>
 
@@ -18,11 +27,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
- <title>Gamers</title>    <!-- Favicon icon -->
+    <title>Gamers</title>
+    <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-
 
 </head>
 
@@ -210,7 +219,7 @@
                             
                         </ul>
                     </li>
-                    <li>
+ <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-note menu-icon"></i><span class="nav-text">Registrar Torneo</span>
                         </a>
@@ -220,7 +229,6 @@
                             
                         </ul>
                     </li>
-
                    
 
             </div>
@@ -252,63 +260,45 @@
                             <div class="card-body">
                                 <div class="form-validation">
                                     <form class="form-valide" action="insertarGrupo.php" method="POST">
+                                        
+
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-username">Fecha <span class="text-danger">*</span>
+                                            <label class="col-lg-4 col-form-label" for="val-username">Titulo del Torneo <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-fecha" name="val-fecha" placeholder="aaaa/mm/dd">
+                                                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="">
                                             </div>
                                         </div>
 
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-username">Horas <span class="text-danger">*</span>
+                                          <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-skill">Juego <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="hora" name="hora" placeholder="">
+                                                <select class="form-control" id="val-consola" name="val-consola"  onchange="">
+                                                <?php while($row1 = mysqli_fetch_array($result1)):;?>
+
+                                                    <option value="<?php echo $row1[0];?>" ><?php echo $row1[0];?></option>
+                                                    
+
+                                                    <?php 
+                                                      //  $var = $row1[1]; 
+                                                       // echo "vaaar" . $var;
+                                                        endwhile;?>
+                                               
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-fecha">Fecha <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="date" class="form-control" id="val-fecha" name="val-fecha" value="<?php echo date('Y-m-d'); ?>">
                                             </div>
                                         </div>
 
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-username">Consola <span class="text-danger">*</span>
-                                            </label>
-                                            <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-consola" name="val-consola" placeholder="">
-                                            </div>
-                                        </div>
+                                        <!-- --------- -->
 
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-username">Precio <span class="text-danger">*</span>
-                                            </label>
-                                            <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="precio1" name="val-precioC" placeholder="Nombre del grupo..">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-username">Juego <span class="text-danger">*</span>
-                                            </label>
-                                            <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-juego" name="val-juego" placeholder="">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-username">Accesorios <span class="text-danger">*</span>
-                                            </label>
-                                            <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-accesorios" name="val-accesorios" placeholder="">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 csol-form-label" for="val-username">Precio <span class="text-danger">*</span>
-                                            </label>
-                                            <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="precio2" name="val-precio" placeholder="">
-                                            </div>
-                                        </div>
-
-                                           <div class="form-group row">
+                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val-skill">Jugador <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
@@ -326,40 +316,116 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        
-
-                                        <div class="form-group row">
-                                            <label class="col-lg-4 csol-form-label" for="val-username">Monedas <span class="text-danger">*</span>
+                                         <div class="form-group row">
+                                            <label class="col-lg-4 csol-form-label"  for="val-username">Monedas <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
 
-                                                <?php 
-                                             /*   if(isset($_POST["val-jugador"])){
-                                                      $var = $row
-                                                      echo $var . "if";
-                                                  //    echo "if"
-                                                }
-                                               
-
-                                                    $query2 = "SELECT monedas from gamers where id=".$var.";";
-                                                    echo $var;
-                                                    echo $query2;
-                                                    $result2 = mysqli_query($link, $query2);
-                                                
-
-
-
-                                                    */ ?>
-      
-                                                <?php //while($row2 = mysqli_fetch_array($result2)):;?>
 
                                                     
                                                      <input type="text" class="form-control" id="val-monedas" name="val-monedas" placeholder="" value="<?php //echo $row2[0];?>" disabled="true" >
 
-                                                  <?php //endwhile;?>
+                                                
 
                                             </div>
                                         </div>
+
+                                        
+
+
+
+                                          <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-username">Hora <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="" name="" value="<?php echo date("H:i:s");?>">
+                                            </div>
+                                        </div>
+
+                                            
+                                        
+
+                                         
+                                         <div class="form-group row">
+                                            <label class="col-lg-4 csol-form-label" for="val-username">Plataforma de Consola <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+
+                                             
+
+                                                    
+                                                     <input type="text" class="form-control" id="val-plataforma" name="val-plataforma" placeholder="" value="<?php //echo $row2[0];?>" disabled="true" >
+
+                                               
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-username">Horas a Rentar <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="hora" name="hora" placeholder="">
+                                            </div>
+                                        </div>
+
+                                        
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-username">Precio por Hora<span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="precio1" name="val-precioC" placeholder="">
+                                            </div>
+                                        </div>
+
+                                    
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-skill">Juego <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                
+
+
+
+                                                <input type="text" class="form-control" id="val-juego" name="val-juego" placeholder="" value="<?php //echo $row2[0];?>"  >
+
+                                                  <?php //endwhile;?>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-username">Accesorios <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" id="val-accesorios" name="val-accesorios">
+                                                <?php while($row4 = mysqli_fetch_array($result4)):;?>
+
+                                                    <option value="<?php echo $row4[1];?>"><?php echo $row4[1];?></option>
+
+                                                    <?php endwhile;?>
+                                               
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 csol-form-label" for="val-username">Precio <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="precio2" name="val-precio" placeholder="">
+                                            </div>
+                                        </div>
+                                    <div class="form-group row">
+                                            <label class="col-lg-4 csol-form-label" for="val-username">Descripción <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <textarea class="textarea_editor form-control bg-light" rows="10" placeholder="Descripcion ..." name="val-descripcion"></textarea>
+                                            </div>
+                                        </div>
+                                       
+                                       
                                     
 
                                     <div class="form-group row">
@@ -369,6 +435,16 @@
                                                 <input type="text" class="form-control" id="total" name="val-total" placeholder="">
                                             </div>
                                         </div>
+
+                                         <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-username">Monedas Ganadas <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-juego" name="val-juego" placeholder="">
+                                            </div>
+                                        </div>
+                                           
+
 
 
                                        
@@ -420,6 +496,10 @@
     <script src="./plugins/validation/jquery.validate.min.js"></script>
     <script src="./plugins/validation/jquery.validate-init.js"></script>
     <script src="js/codigoFV.js"></script>
+    <script src="js/codigoFV2.js"></script>    
+    <!--script src="js/codigoFV3.js"></script-->
+
+
 </body>
 
 </html>
