@@ -19,7 +19,7 @@ function traer(id){
     .done(function (respuesta) {
       // $("#val-monedas").html(respuesta);
 
-      console.log("Monedas "+respuesta+ "   sss");
+      console.log("--- "+respuesta+ "   ---");
       document.getElementById('val-monedas').value =respuesta;
     })
     .fail(function () {
