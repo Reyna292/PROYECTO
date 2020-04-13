@@ -316,7 +316,7 @@
                                         </div>
 
                                          <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-skill">MOdalidad <span class="text-danger">*</span>
+                                            <label class="col-lg-4 col-form-label" for="val-skill">Modalidad <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
                                                 <select class="form-control" id="val-juego" name="val-juego"  onchange="">
@@ -483,7 +483,7 @@
     <script src="./plugins/validation/jquery.validate.min.js"></script>
     <script src="./plugins/validation/jquery.validate-init.js"></script>
     <script src="js/codigoFV.js"></script>
-    <script src="js/codigoFV2.js"></script>    
+    <script src="js/codigo-formValidation6.js"></script>    
     <!--script src="js/codigoFV3.js"></script-->
 
 
