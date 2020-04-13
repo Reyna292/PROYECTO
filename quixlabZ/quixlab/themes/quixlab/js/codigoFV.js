@@ -17,7 +17,7 @@ function traer(id){
       // $("#val-monedas").html(respuesta);
 
       console.log("laaaa "+respuesta+ "   sss");
-       document.getElementById('val-monedas').value =respuesta;
+      document.getElementById('val-monedas').value =respuesta;
     })
     .fail(function () {
         console.log('error');
