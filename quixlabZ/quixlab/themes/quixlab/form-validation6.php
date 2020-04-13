@@ -300,7 +300,7 @@
                                             <label class="col-lg-4 col-form-label" for="val-skill">Juego <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <select class="form-control" id="val-juego" name="val-juego"  onchange="">
+                                                <select class="form-control" id="val-juego" name="val-juego"  onchange="obJuego();">
                                                     <option value="none" selected disabled hidden>Seleccionar...  
                                                 <?php while($row1 = mysqli_fetch_array($result1)):;?>
 
@@ -319,7 +319,7 @@
                                             <label class="col-lg-4 col-form-label" for="val-skill">Modalidad <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <select class="form-control" id="val-juego" name="val-juego"  onchange="">
+                                                <select class="form-control" id="val-moda" name="val-moda"  onchange="obMod();">
                                                     <option value="none" selected disabled hidden>Seleccionar... 
                                                 <?php while($row2 = mysqli_fetch_array($result2)):;?>
 
@@ -338,7 +338,7 @@
                                             <label class="col-lg-4 col-form-label" for="val-fecha">Fecha <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="date" class="form-control" id="val-fecha" name="val-fecha" value="<?php echo date('Y-m-d'); ?>">
+                                                <input type="date" class="form-control" id="fecha" name="val-fecha" value="<?php echo date('Y-m-d'); ?>">
                                             </div>
                                         </div>
 
@@ -347,7 +347,7 @@
                                             <label class="col-lg-4 col-form-label" for="val-username">Hora <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="" name="" value="<?php echo date("H:i:s");?>">
+                                                <input type="text" class="form-control" id="hr" name="" value="<?php echo date("H:i:s");?>">
                                             </div>
                                         </div>
 
@@ -355,7 +355,7 @@
                                             <label class="col-lg-4 col-form-label" for="val-maxJugadores">Maximo de jugadores <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="number" class="form-control" id="maxJugadores" name="maxJugadores" placeholder="">
+                                                <input type="number" class="form-control" id="mjug" name="maxJugadores" placeholder="">
                                             </div>
                                         </div>
 
@@ -364,7 +364,7 @@
                                             <label class="col-lg-4 col-form-label" for="val-skill">Forma <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <select class="form-control" id="val-forma" name="val-forma"  onchange="">
+                                                <select class="form-control" id="val-forma" name="val-forma"  onchange="obForm();">
                                                     <option value="none" selected disabled hidden>Seleccionar... 
                                                 <?php while($row3 = mysqli_fetch_array($result3)):;?>
 
@@ -383,14 +383,14 @@
                                             <label class="col-lg-4 csol-form-label" for="val-premios">Premios <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <textarea class="textarea_editor form-control bg-light" rows="10" placeholder="Premios ..." name="val-descripcion"></textarea>
+                                                <textarea class="textarea_editor form-control bg-light" id="pre" rows="10" placeholder="Premios ..." name="val-descripcion"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-4 csol-form-label" for="val-descripcion">Descripción <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <textarea class="textarea_editor form-control bg-light" rows="10" placeholder="Descripcion ..." name="val-descripcion"></textarea>
+                                                <textarea class="textarea_editor form-control bg-light" id="desc" rows="10" placeholder="Descripcion ..." name="val-descripcion"></textarea>
                                             </div>
                                         </div>
 
@@ -398,7 +398,7 @@
                                             <label class="col-lg-4 col-form-label" for="val-skill">Estatus <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <select class="form-control" id="val-forma" name="val-forma"  onchange="">
+                                                <select class="form-control" id="val-esta" name="val-esta"  onchange="obEst();">
                                                     <option value="none" selected disabled hidden>Seleccionar... 
                                                 <?php while($row4 = mysqli_fetch_array($result4)):;?>
 
@@ -417,7 +417,7 @@
                                             <label class="col-lg-4 col-form-label" for="val-skill">Jugador ganador<span class="text-danger"></span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <select class="form-control" id="val-jugador" name="val-jugador"  onchange="">
+                                                <select class="form-control" id="val-jugador" name="val-jugador"  onchange="obJugID();">
                                                     <option value="none" selected disabled hidden>Seleccionar... 
                                                 <?php while($row5 = mysqli_fetch_array($result5)):;?>
 
