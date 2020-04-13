@@ -6,7 +6,7 @@
 
 	if(isset($_POST['consulta'])){
 		$q = $link->real_escape_string($_POST['consulta']);
-		$sql = "select id,plataforma,serial,cantidad from consolas WHERE grupo LIKE '%".$q."%'";
+		$sql = "SELECT id,plataforma,serial,cantidad FROM consolas WHERE grupo LIKE '%".$q."%'";
 		
 	}
 	$resultado = $link -> query($sql);
