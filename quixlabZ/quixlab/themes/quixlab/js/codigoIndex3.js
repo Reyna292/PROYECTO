@@ -49,6 +49,7 @@ function guardar(id,n,a,f,g,t,c){
 		success:function(response){
 			console.log(response);
 			alert("Se ha guardado exitosamente");
+			buscar();
 		}
 	})
 }
