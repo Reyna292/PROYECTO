@@ -21,6 +21,7 @@ function traer(id){
 
       console.log("--- "+respuesta+ "   ---");
       document.getElementById('val-monedas').value =respuesta;
+      document.getElementById('mone').value =respuesta;
     })
     .fail(function () {
         console.log('error');
