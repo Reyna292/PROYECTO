@@ -12,7 +12,6 @@
 
 
 	if($resultado -> num_rows > 0){
-		echo " RESULTADO2fv " . $resultado;
 		$ver = $resultado -> fetch_assoc();
 		$salida.= $ver['monedas'];
 	

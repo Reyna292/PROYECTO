@@ -281,7 +281,7 @@
                                             </div>
                                         </div>
                                          <div class="form-group row">
-                                            <label class="col-lg-4 csol-form-label" id="mone" for="val-username">Monedas <span class="text-danger">*</span>
+                                            <label class="col-lg-4 csol-form-label"  for="val-username">Monedas <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
 
