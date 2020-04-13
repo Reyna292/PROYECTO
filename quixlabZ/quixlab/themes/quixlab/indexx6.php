@@ -1,12 +1,12 @@
 <?php  
 	
-	 $link = new mysqli("localhost","admin","93ab9f73989e766a77c306ba3e6f7cb8d95309f36378ceed","revolution1");
+	 $link = new mysqli("localhost","admin","93ab9f73989e766a77c306ba3e6f7cb8d95309f36378ceed","revolution");
 	 $salida = "";
 	 $sql = "select id,nombre,apellidos,fecha_nacimiento,genero,telefono,correo from gamers";
 
 	if(isset($_POST['consulta'])){
 		$q = $link->real_escape_string($_POST['consulta']);
-		$sql = "select id,nombre,apellidos,fecha_nacimiento,genero,telefono,correo from gamers WHERE nombre LIKE '%".$q."%'";
+		$sql = "SELECT id, titulo, (SELECT nombre FROM juegos WHERE id = id_juego) AS juegoN, fecha, hora, (SELECT nombre FROM modalidades WHERE id = id_modalidad) AS modalidad, max_jugadores, (SELECT nombre FROM formas WHERE id =  id_forma) AS forma, premios, descripcion, (SELECT nombre FROM estatus WHERE id = id_estatus) AS estatus, (SELECT nombre FROM gamers WHERE id = id_jugador_ganador) AS jugador FROM torneos WHERE titulo LIKE '%".$q."%'";
 		
 	}
 
@@ -17,15 +17,16 @@
 		$salida.= "<table class='table table-xs mb-0'>
 					 <thead>
 					 	<tr>
-                            <th>id</th>
-                            <th>Nombre</th>
-                            <th>Apellidos</th>
-                            <th>Fecha Nacimiento</th>
-                            <th>Género</th>
-                            <th>Teléfono</th>
-                            <th>Correo</th>
-                            <th>Nombre de Usuario</th>
-
+                            <th>Titulo</th>
+                            <th>Juego</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Modalidad</th>
+                            <th>Maximo de Jugadores</th>
+                            <th>Forma</th>
+                            <th>Premios</th>
+                            <th>Estatus</th>
+                            <th>Ganador</th>
 
 
                         </tr>
@@ -34,14 +35,18 @@
 
                     while ($ver = $resultado -> fetch_assoc()) {
                     	$salida.="<tr>
-                                    <td>".$ver['id']."</td>
-                                    <td>".$ver['nombre']."</td>
-                                    <td>".$ver['apellidos']."</td>                                
-                                    <td>".$ver['fecha_nacimiento']."</td>
-                                    <td>".$ver['genero']."</td>
-                                    <td>".$ver['telefono']."</td>
-                                    <td>".$ver['correo']."</td>
-                               
+                                    <td>".$ver['titulo']."</td>
+                                    <td>".$ver['juegoN']."</td>
+                                    <td>".$ver['fecha']."</td>                                
+                                    <td>".$ver['hora']."</td>
+                                    <td>".$ver['modalidad']."</td>
+                                    <td>".$ver['max_jugadores']."</td>
+                                    <td>".$ver['forma']."</td>
+                                    <td>".$ver['premios']."</td>
+                                    <td>".$ver['descripcion']."</td>
+                                    <td>".$ver['estatus']."</td>
+                                    <td>".$ver['jugador']."</td>
+
                                      <td><button type='button' class='btn btn-primary'  data-toggle='modal' data-target='#modal' value='".$ver['id']."' onclick='act(".$ver['id'].");'> Actualizar
                                 	</td>
                                 	<td><button type='button' value='".$ver['id']."' id='eliminar' onclick='preg(".$ver['id'].");' class='btn btn-danger'>Eliminar
