@@ -4,6 +4,7 @@
      if(isset($_POST['id'])){
          $var = $link->real_escape_string($_POST['id']);     
       }
+      echo "var   " . $var;
          $query2 = "SELECT monedas FROM gamers WHERE id=".$var.";";   
          $resultado = mysqli_query($link, $query2);
         echo "QUERY   " . $query2;
