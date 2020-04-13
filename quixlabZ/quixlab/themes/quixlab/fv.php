@@ -6,13 +6,13 @@
       }
       echo "var  fv " . $var;
          $query = "SELECT monedas FROM gamers WHERE id=".$var.";";   
-         $resultado = mysqli_query($link, $query2);
-        echo "QUERY   " . $query;
-		echo " RESULTADO fv  " . $resultado;
+         $resultado = mysqli_query($link, $query);
+        echo " QUERY   " . $query;
+		echo " RESULTADO1fv  " . $resultado;
 
 
 	if($resultado -> num_rows > 0){
-		echo " RESULTADO fv " . $resultado;
+		echo " RESULTADO2fv " . $resultado;
 		$ver = $resultado -> fetch_assoc();
 		$salida.= $ver['monedas'];
 	
