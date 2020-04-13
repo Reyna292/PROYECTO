@@ -2,11 +2,24 @@
      require("connect_db.php");
      
 
-      $query1 = "SELECT id, nombre FROM juegos";
-      $result1 = mysqli_query($link, $query1);
-      date_default_timezone_set("America/Monterrey");
-   
-      $query3 = "SELECT c.id, p.nombre, p.costo_por_hora, p.costo_en_monedas from consolas c inner join plataformas p on c.id_plataforma = p.id ";
+    $query1 = "SELECT id, nombre FROM juegos";
+    $result1 = mysqli_query($link, $query1);
+    date_default_timezone_set("America/Monterrey");
+        
+    $query2 = "SELECT id, nombre FROM modalidades";
+    $result2 = mysqli_query($link, $query2);
+
+    $query3 = "SELECT id, nombre FROM formas";
+    $result3 = mysqli_query($link, $query3);
+
+    $query4 = "SELECT id, nombre FROM estatus";
+    $result4 = mysqli_query($link, $query4);
+
+
+    $query5 = "SELECT nombre,id from gamers";
+    $result5 = mysqli_query($link, $query5);
+
+  /*    $query3 = "SELECT c.id, p.nombre, p.costo_por_hora, p.costo_en_monedas from consolas c inner join plataformas p on c.id_plataforma = p.id ";
       $result3 = mysqli_query($link, $query3);
 
         $query4 = "SELECT id,nombre from accesorios";
@@ -15,6 +28,7 @@
 
         $query5 = "SELECT id from consolas";
       $result5 = mysqli_query($link, $query5);
+    */
 
 ?>
 
@@ -274,20 +288,38 @@
                                             <label class="col-lg-4 col-form-label" for="val-skill">Juego <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <select class="form-control" id="val-consola" name="val-consola"  onchange="">
+                                                <select class="form-control" id="val-juego" name="val-juego"  onchange="">
                                                 <?php while($row1 = mysqli_fetch_array($result1)):;?>
 
-                                                    <option value="<?php echo $row1[0];?>" ><?php echo $row1[0];?></option>
+                                                    <option value="<?php echo $row1[0];?>" ><?php echo $row1[1];?></option>
                                                     
 
                                                     <?php 
-                                                      //  $var = $row1[1]; 
-                                                       // echo "vaaar" . $var;
+                                             
                                                         endwhile;?>
                                                
                                                 </select>
                                             </div>
                                         </div>
+
+                                         <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-skill">MOdalidad <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" id="val-juego" name="val-juego"  onchange="">
+                                                <?php while($row2 = mysqli_fetch_array($result2)):;?>
+
+                                                    <option value="<?php echo $row2[0];?>" ><?php echo $row2[1];?></option>
+                                                    
+
+                                                    <?php 
+                                             
+                                                        endwhile;?>
+                                               
+                                                </select>
+                                            </div>
+                                        </div>
+
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val-fecha">Fecha <span class="text-danger">*</span>
                                             </label>
@@ -296,26 +328,94 @@
                                             </div>
                                         </div>
 
-                                        <!-- --------- -->
+
+                                          <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-username">Hora <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="" name="" value="<?php echo date("H:i:s");?>">
+                                            </div>
+                                        </div>
+
+                                          <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-maxJugadores">Maximo de jugadores <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="maxJugadores" name="maxJugadores" placeholder="">
+                                            </div>
+                                        </div>
+
+
+                                         <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-skill">Forma <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" id="val-forma" name="val-forma"  onchange="">
+                                                <?php while($row3 = mysqli_fetch_array($result3)):;?>
+
+                                                    <option value="<?php echo $row3[0];?>" ><?php echo $row3[1];?></option>
+                                                    
+
+                                                    <?php 
+                                             
+                                                        endwhile;?>
+                                               
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                             <div class="form-group row">
+                                            <label class="col-lg-4 csol-form-label" for="val-premios">Premios <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <textarea class="textarea_editor form-control bg-light" rows="10" placeholder="Premios ..." name="val-descripcion"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 csol-form-label" for="val-descripcion">Descripción <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <textarea class="textarea_editor form-control bg-light" rows="10" placeholder="Descripcion ..." name="val-descripcion"></textarea>
+                                            </div>
+                                        </div>
+
+                                         <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-skill">Estatus <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" id="val-forma" name="val-forma"  onchange="">
+                                                <?php while($row4 = mysqli_fetch_array($result4)):;?>
+
+                                                    <option value="<?php echo $row4[0];?>" ><?php echo $row4[1];?></option>
+                                                    
+
+                                                    <?php 
+                                             
+                                                        endwhile;?>
+                                               
+                                                </select>
+                                            </div>
+                                        </div>
 
                                          <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val-skill">Jugador <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
                                                 <select class="form-control" id="val-jugador" name="val-jugador"  onchange="obtenerID()">
-                                                <?php while($row1 = mysqli_fetch_array($result1)):;?>
+                                                <?php while($row5 = mysqli_fetch_array($result5)):;?>
 
-                                                    <option value="<?php echo $row1[1];?>" ><?php echo $row1[0];?></option>
+                                                    <option value="<?php echo $row5[1];?>" ><?php echo $row5[0];?></option>
                                                     
 
                                                     <?php 
-                                                      //  $var = $row1[1]; 
-                                                       // echo "vaaar" . $var;
+                                                    
                                                         endwhile;?>
                                                
                                                 </select>
                                             </div>
                                         </div>
+                                        <!-- --------- -->
+
                                          <div class="form-group row">
                                             <label class="col-lg-4 csol-form-label"  for="val-username">Monedas <span class="text-danger">*</span>
                                             </label>
