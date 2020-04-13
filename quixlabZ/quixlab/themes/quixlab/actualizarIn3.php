@@ -5,7 +5,7 @@
 	 
 	if(isset($_POST['consulta'])){
 		$q = $link->real_escape_string($_POST['consulta']);
-		$sql = "select id, nombre, apellidos, fecha_nacimiento, genero, telefono, correo, namer_tag FROM gamers WHERE id = ".$q.";";
+		$sql = "select id, nombre, apellidos, fecha_nacimiento, genero, telefono, correo FROM gamers WHERE id = ".$q.";";
 		
 	}
 
@@ -51,12 +51,6 @@
                        <label for='resultados' class='col-sm-2 col-form-label'>Correo</label>
                         <div class='col-sm-10'>
                             <input type='text' class='form-control form-control-sm'  id='cr' value='".$ver['correo']."''><br>
-                        </div>
-                    </div>
-                    <div class='form-group row'>
-                       <label for='resultados' class='col-sm-2 col-form-label'>Name tag</label>
-                        <div class='col-sm-10'>
-                            <input type='text' class='form-control form-control-sm'  id='nam' value='".$ver['namer_tag']."''><br>
                         </div>
                     </div>
                     

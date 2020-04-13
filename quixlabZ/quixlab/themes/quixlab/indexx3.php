@@ -6,7 +6,7 @@
 
 	if(isset($_POST['consulta'])){
 		$q = $link->real_escape_string($_POST['consulta']);
-		$sql = "select id,nombre,apellidos,fecha_nacimiento,genero,telefono,correo,namer_tag from gamers WHERE nombre LIKE '%".$q."%'";
+		$sql = "select id,nombre,apellidos,fecha_nacimiento,genero,telefono,correo from gamers WHERE nombre LIKE '%".$q."%'";
 		
 	}
 
@@ -41,7 +41,7 @@
                                     <td>".$ver['genero']."</td>
                                     <td>".$ver['telefono']."</td>
                                     <td>".$ver['correo']."</td>
-                                    <td>".$ver['namer_tag']."</td>
+                               
                                      <td><button type='button' class='btn btn-primary'  data-toggle='modal' data-target='#modal' value='".$ver['id']."' onclick='act(".$ver['id'].");'> Actualizar
                                 	</td>
                                 	<td><button type='button' value='".$ver['id']."' id='eliminar' onclick='preg(".$ver['id'].");' class='btn btn-danger'>Eliminar
