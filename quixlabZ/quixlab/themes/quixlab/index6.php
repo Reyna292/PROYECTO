@@ -334,7 +334,7 @@
 
 
     <script src="./js/dashboard/dashboard-1.js"></script>
-     <script src="js/codigoIndex3.js"></script>
+     <script src="js/codigoIndex6.js"></script>
 
 </body>
 
