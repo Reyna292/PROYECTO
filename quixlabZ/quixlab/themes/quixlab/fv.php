@@ -10,7 +10,7 @@
  
 
 	if($resultado -> num_rows > 0){
-		echo $resultado;
+		echo " RESULTADO  " . $resultado;
 		$ver = $resultado -> fetch_assoc();
 		$salida.= $ver['monedas'];
 	
