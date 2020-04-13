@@ -12,20 +12,20 @@
 		$genero =  $link->real_escape_string($_POST['g']);
 		$telefono =  $link->real_escape_string($_POST['t']);
 		$correo =  $link->real_escape_string($_POST['c']);
-		$nam_tag =  $link->real_escape_string($_POST['nt']);
+	//	$nam_tag =  $link->real_escape_string($_POST['nt']);
 
 		if(empty($fecha_na)){
 			echo "f nula ";
 			$fecha_na = 'null';
 			echo $fecha_na;
-			$sql = "UPDATE gamers Set nombre = '".$nombre."', apellidos = '".$apellidos."', fecha_nacimiento = ".$fecha_na.", genero =  '".$genero."', telefono =  '".$telefono."', correo =  '".$correo."', namer_tag =  '".$nam_tag."' WHERE id = ".$q.";";
+			$sql = "UPDATE gamers Set nombre = '".$nombre."', apellidos = '".$apellidos."', fecha_nacimiento = ".$fecha_na.", genero =  '".$genero."', telefono =  '".$telefono."', correo =  '".$correo."' WHERE id = ".$q.";";
 		}else if(empty($genero)){
 			echo "g vacia ";
 			$genero = 'null';
 			echo $genero;
-			$sql = "UPDATE gamers Set nombre = '".$nombre."', apellidos = '".$apellidos."', fecha_nacimiento = '".$fecha_na."', genero =  ".$genero.", telefono =  '".$telefono."', correo =  '".$correo."', namer_tag =  '".$nam_tag."' WHERE id = ".$q.";";
+			$sql = "UPDATE gamers Set nombre = '".$nombre."', apellidos = '".$apellidos."', fecha_nacimiento = '".$fecha_na."', genero =  ".$genero.", telefono =  '".$telefono."', correo =  '".$correo."',  WHERE id = ".$q.";";
 		}else{
-			$sql = "UPDATE gamers Set nombre = '".$nombre."', apellidos = '".$apellidos."', fecha_nacimiento = '".$fecha_na."', genero =  '".$genero."', telefono =  '".$telefono."', correo =  '".$correo."', namer_tag =  '".$nam_tag."' WHERE id = ".$q.";";
+			$sql = "UPDATE gamers Set nombre = '".$nombre."', apellidos = '".$apellidos."', fecha_nacimiento = '".$fecha_na."', genero =  '".$genero."', telefono =  '".$telefono."', correo =  '".$correo."',  WHERE id = ".$q.";";
 		}
 
 		
