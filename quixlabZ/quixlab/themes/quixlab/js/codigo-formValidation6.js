@@ -46,7 +46,7 @@ function guardarT(){
 
 
 function GuardarD(){
-    
+    console.log(" DATOOS " +titulo + " - " +fecha + " - " +hora + " - " +maxJug + " - " +premio + " - " +descripcion);
     $.ajax({
         url:'./GuardarTorneo.php',
         type: 'POST',

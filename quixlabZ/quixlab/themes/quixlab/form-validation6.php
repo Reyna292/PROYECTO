@@ -482,7 +482,7 @@
     <script src="js/codigo-formValidation.js"></script>
     <script src="./plugins/validation/jquery.validate.min.js"></script>
     <script src="./plugins/validation/jquery.validate-init.js"></script>
-    <script src="js/codigoFV.js"></script>
+
     <script src="js/codigo-formValidation6.js"></script>    
     <!--script src="js/codigoFV3.js"></script-->
 
