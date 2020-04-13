@@ -423,8 +423,7 @@
 
                                                     <option value="<?php echo $row5[1];?>" ><?php echo $row5[0];?></option>
                                                     
-
-                                                    <?php 
+                                                <?php 
                                                     
                                                         endwhile;?>
                                                
@@ -439,7 +438,7 @@
                                         
                                         <div class="form-group row">
                                             <div class="col-lg-8 ml-auto">
-                                                <button type="submit" class="btn btn-primary">Registrar</button>
+                                                <button type="submit" class="btn btn-primary" onclick="guardarT();">Registrar</button>
                                             </div>
                                         </div>
                                     </form>
