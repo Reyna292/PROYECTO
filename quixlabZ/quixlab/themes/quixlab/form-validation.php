@@ -255,23 +255,18 @@
                                         </div>
 
                                
-                                      <div class="form-group row">                                    
+                                    <div class="form-group row">                                    
                                          
-                                         &nbsp;&nbsp;&nbsp;&nbsp;   <label for="mujer">Mujer</label>
-                                             <div class="col-lg-6">
-                                 <input class="form-control" type="radio" id="mujer" name="gender" value="mujer">
-                                         </div>
-                                       
+                                    <div class="form-check form-check-inline">  
+                                         <label class="form-check-label" for="mujer">Femenino</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                         <input class="form-check-input" type="radio" id="mujer" name="gender" value="mujer">
                                     </div>
                                           
-
-                                       <div class="form-group row">                                    
-                                         
-                                         &nbsp;&nbsp;&nbsp;&nbsp;   <label for="mujer">Hombre</label>
-                                             <div class="col-lg-6">
-                                 <input class="form-control" type="radio" id="hombre" name="gender" value="hombre">
-                                         </div>
-                                       
+                                    <div class="form-check form-check-inline">                                    
+                                        <label class="form-check-label" for="mujer">Masculino</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input class="form-check-input" type="radio" id="hombre" name="gender" value="hombre"> 
+                                     </div>
+                                     <br>
                                     </div>
                                                                                                                          
                                         <div class="form-group row">
