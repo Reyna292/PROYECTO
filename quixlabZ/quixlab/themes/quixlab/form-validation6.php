@@ -355,7 +355,7 @@
                                             <label class="col-lg-4 col-form-label" for="val-maxJugadores">Maximo de jugadores <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="maxJugadores" name="maxJugadores" placeholder="">
+                                                <input type="number" class="form-control" id="maxJugadores" name="maxJugadores" placeholder="">
                                             </div>
                                         </div>
 
