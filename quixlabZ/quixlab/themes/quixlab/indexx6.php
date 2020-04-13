@@ -2,7 +2,7 @@
 	
 	 $link = new mysqli("localhost","admin","93ab9f73989e766a77c306ba3e6f7cb8d95309f36378ceed","revolution");
 	 $salida = "";
-	 $sql = "select id,nombre,apellidos,fecha_nacimiento,genero,telefono,correo from gamers";
+	 $sql = "SELECT id, titulo, (SELECT nombre FROM juegos WHERE id = id_juego) AS juegoN, fecha, hora, (SELECT nombre FROM modalidades WHERE id = id_modalidad) AS modalidad, max_jugadores, (SELECT nombre FROM formas WHERE id =  id_forma) AS forma, premios, descripcion, (SELECT nombre FROM estatus WHERE id = id_estatus) AS estatus, (SELECT nombre FROM gamers WHERE id = id_jugador_ganador) AS jugador FROM torneos";
 
 	if(isset($_POST['consulta'])){
 		$q = $link->real_escape_string($_POST['consulta']);
