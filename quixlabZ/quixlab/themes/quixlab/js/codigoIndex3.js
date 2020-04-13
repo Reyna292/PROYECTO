@@ -39,13 +39,13 @@ function eliminar(consulta){
 	})
 }
 
-function guardar(id,n,a,f,g,t,c,nt){
+function guardar(id,n,a,f,g,t,c){
 	console.log(id+n+a+f+g+t+c+nt);
 	$.ajax({
 		url:'./actualizarGuardar.php',
 		type: 'POST',
 		dataType: 'html',
-		data:{id: id, n: n,a: a,f: f,g: g,t: t,c: c,nt: nt},
+		data:{id: id, n: n,a: a,f: f,g: g,t: t,c: c},
 		success:function(response){
 			console.log(response);
 			alert("Se ha guardado exitosamente");
@@ -102,7 +102,6 @@ function guard(idd){
 	var g = document.getElementById("gen").value;
 	var t = document.getElementById("tel").value;
 	var c = document.getElementById("cr").value;
-	var nt = document.getElementById("nam").value;
 
 	if(id != " "){
 		if(f == null) {
@@ -114,7 +113,7 @@ function guard(idd){
 			console.log("entro g");
 		}
 			console.log("f "+ f +" g "+g);
-		guardar(id,n,a,f,g,t,c,nt);
+		guardar(id,n,a,f,g,t,c);
 		buscar();
 	}else{
 		guardar();
