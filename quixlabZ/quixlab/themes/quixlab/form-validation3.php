@@ -2,11 +2,10 @@
      require("connect_db.php");
      
 
-      $query1 = "SELECT namer_tag from gamers";
+      $query1 = "SELECT nombre,id from gamers";
       $result1 = mysqli_query($link, $query1);
 
-      
-      
+   
 
 ?>
 
@@ -24,6 +23,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
 
 </head>
 
@@ -303,22 +303,52 @@
                                             <label class="col-lg-4 col-form-label" for="val-skill">Jugador <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <select class="form-control" id="val-jugador" name="val-jugador">
+                                                <select class="form-control" id="val-jugador" name="val-jugador"  onchange="obtenerID()">
                                                 <?php while($row1 = mysqli_fetch_array($result1)):;?>
 
-                                                    <option value="<?php echo $row1[0];?>"><?php echo $row1[0];?></option>
+                                                    <option value="<?php echo $row1[1];?>" ><?php echo $row1[0];?></option>
+                                                    
 
-                                                    <?php endwhile;?>
+                                                    <?php 
+                                                      //  $var = $row1[1]; 
+                                                       // echo "vaaar" . $var;
+                                                        endwhile;?>
                                                
                                                 </select>
                                             </div>
                                         </div>
+                                        
 
                                         <div class="form-group row">
                                             <label class="col-lg-4 csol-form-label" for="val-username">Monedas <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val-monedas" name="val-monedas" placeholder="">
+
+                                                <?php 
+                                             /*   if(isset($_POST["val-jugador"])){
+                                                      $var = $row
+                                                      echo $var . "if";
+                                                  //    echo "if"
+                                                }
+                                               
+
+                                                    $query2 = "SELECT monedas from gamers where id=".$var.";";
+                                                    echo $var;
+                                                    echo $query2;
+                                                    $result2 = mysqli_query($link, $query2);
+                                                
+
+
+
+                                                    */ ?>
+      
+                                                <?php //while($row2 = mysqli_fetch_array($result2)):;?>
+
+                                                    
+                                                     <input type="text" class="form-control" id="val-monedas" name="val-monedas" placeholder="" value="<?php //echo $row2[0];?>" disabled="true" >
+
+                                                  <?php //endwhile;?>
+
                                             </div>
                                         </div>
                                     
@@ -380,7 +410,7 @@
     <script src="js/codigo-formValidation.js"></script>
     <script src="./plugins/validation/jquery.validate.min.js"></script>
     <script src="./plugins/validation/jquery.validate-init.js"></script>
-
+    <script src="js/codigoFV.js"></script>
 </body>
 
 </html>
