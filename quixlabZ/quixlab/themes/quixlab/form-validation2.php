@@ -8,8 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
-    <!-- Favicon icon -->
+ <title>Gamers</title>    <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
@@ -201,7 +200,16 @@
                         </ul>
                     </li>
 
-                   
+                     <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-note menu-icon"></i><span class="nav-text">Registrar Torneo</span>
+                        </a>
+                        <ul aria-expanded="false">
+                           
+                            <li><a href="./form-validation6.php">Registro de Torneo</a></li>
+                            
+                        </ul>
+                    </li>
 
             </div>
         </div>

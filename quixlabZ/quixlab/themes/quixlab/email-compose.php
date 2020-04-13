@@ -31,7 +31,7 @@
               src="https://code.jquery.com/jquery-3.4.1.js"
               integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
               crossorigin="anonymous"></script>
-    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <title>Gamers</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
@@ -223,7 +223,16 @@
                             
                         </ul>
                     </li>
-
+  <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-note menu-icon"></i><span class="nav-text">Registrar Torneo</span>
+                        </a>
+                        <ul aria-expanded="false">
+                           
+                            <li><a href="./form-validation6.php">Registro de Torneo</a></li>
+                            
+                        </ul>
+                    </li>
                    
 
             </div>

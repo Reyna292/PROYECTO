@@ -194,7 +194,16 @@
                         </ul>
                     </li>
 
-                   
+                     <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-note menu-icon"></i><span class="nav-text">Registrar Torneo</span>
+                        </a>
+                        <ul aria-expanded="false">
+                           
+                            <li><a href="./form-validation6.php">Registro de Torneo</a></li>
+                            
+                        </ul>
+                    </li>
 
             </div>
         </div>
