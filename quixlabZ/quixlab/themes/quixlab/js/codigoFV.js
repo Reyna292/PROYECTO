@@ -1,4 +1,7 @@
 
+var id = document.getElementById("val-jugador").value;;
+$(traer(id));
+
 function obtenerID(){
      id = document.getElementById("val-jugador").value;
     console.log("IDD "+id);
