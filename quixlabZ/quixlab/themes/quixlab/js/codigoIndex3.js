@@ -40,7 +40,7 @@ function eliminar(consulta){
 }
 
 function guardar(id,n,a,f,g,t,c){
-	console.log(id+n+a+f+g+t+c+nt);
+	console.log(id+n+a+f+g+t+c);
 	$.ajax({
 		url:'./actualizarGuardar.php',
 		type: 'POST',
