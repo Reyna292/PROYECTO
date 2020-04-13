@@ -190,13 +190,25 @@
                                                       <li><a href="./index3.php">Listado de Jugadores</a></li>
                         </ul>
                     </li>
+
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-menu menu-icon"></i> <span class="nav-text">Listado de Torneos</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./index6.php">Listado de Torneos</a></li>
+                        </ul>
+                    </li>
+
+
+
                     <li class="nav-label">Enviar Correo a Gamers</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-envelope menu-icon"></i> <span class="nav-text">Enviar Correo</span>
                         </a>
                         <ul aria-expanded="false">
-                                                      <li><a href="./email-compose.php">Enviar Correo</a></li>
+                                <li><a href="./email-compose.php">Enviar Correo</a></li>
                         </ul>
                     </li>
                     <li>
@@ -289,6 +301,7 @@
                                             </label>
                                             <div class="col-lg-6">
                                                 <select class="form-control" id="val-juego" name="val-juego"  onchange="">
+                                                    <option value="none" selected disabled hidden>Seleccionar...  
                                                 <?php while($row1 = mysqli_fetch_array($result1)):;?>
 
                                                     <option value="<?php echo $row1[0];?>" ><?php echo $row1[1];?></option>
@@ -307,6 +320,7 @@
                                             </label>
                                             <div class="col-lg-6">
                                                 <select class="form-control" id="val-juego" name="val-juego"  onchange="">
+                                                    <option value="none" selected disabled hidden>Seleccionar... 
                                                 <?php while($row2 = mysqli_fetch_array($result2)):;?>
 
                                                     <option value="<?php echo $row2[0];?>" ><?php echo $row2[1];?></option>
@@ -351,6 +365,7 @@
                                             </label>
                                             <div class="col-lg-6">
                                                 <select class="form-control" id="val-forma" name="val-forma"  onchange="">
+                                                    <option value="none" selected disabled hidden>Seleccionar... 
                                                 <?php while($row3 = mysqli_fetch_array($result3)):;?>
 
                                                     <option value="<?php echo $row3[0];?>" ><?php echo $row3[1];?></option>
@@ -384,6 +399,7 @@
                                             </label>
                                             <div class="col-lg-6">
                                                 <select class="form-control" id="val-forma" name="val-forma"  onchange="">
+                                                    <option value="none" selected disabled hidden>Seleccionar... 
                                                 <?php while($row4 = mysqli_fetch_array($result4)):;?>
 
                                                     <option value="<?php echo $row4[0];?>" ><?php echo $row4[1];?></option>
@@ -398,10 +414,11 @@
                                         </div>
 
                                          <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val-skill">Jugador <span class="text-danger">*</span>
+                                            <label class="col-lg-4 col-form-label" for="val-skill">Jugador ganador<span class="text-danger"></span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <select class="form-control" id="val-jugador" name="val-jugador"  onchange="obtenerID()">
+                                                <select class="form-control" id="val-jugador" name="val-jugador"  onchange="">
+                                                    <option value="none" selected disabled hidden>Seleccionar... 
                                                 <?php while($row5 = mysqli_fetch_array($result5)):;?>
 
                                                     <option value="<?php echo $row5[1];?>" ><?php echo $row5[0];?></option>
