@@ -285,7 +285,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="form-validation">
-                                    <form class="form-valide" action="insertarGrupo.php" method="POST">
+                                    <form class="form-valide"  method="POST">
                                         
 
                                         <div class="form-group row">
